@@ -8,6 +8,11 @@ var mongoose = require('mongoose');
 var mysql = require('mysql');
 
 
+// connect to mongodb
+mongoose.connect('mongodb://localhost/ultralog');
+mongoose.Promise = global.Promise;
+
+
 // var connection = mysql.createConnection({
 //     host       : 'localhost',
 //     user       : 'root',

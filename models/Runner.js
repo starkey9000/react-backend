@@ -14,4 +14,4 @@ const RunnerSchema = new Schema({
 
 const Runner = mongoose.model('runner', RunnerSchema);
 
-module.export Runner;
+module.exports = Runner;
