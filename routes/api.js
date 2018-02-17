@@ -4,8 +4,17 @@ var Runner = require('../models/runner');
 
 
 /* get list of runners from the database */
-router.get('/runners', function(req, res, next) {
-    res.send({type:'GET'})
+router.get('/all_runners', function(req, res, next) {
+    Runner.find({}).then(function(runners){
+        res.send(runners);
+    });
+});
+
+/* get list of runners from the database */
+router.get('/runners/:id', function(req, res, next) {
+    Runner.find({_id: req.params.id}).then(function(runners){
+        res.send(runners);
+    });
 });
 
 /* add a runner to the database */
